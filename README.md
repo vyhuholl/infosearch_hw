@@ -9,3 +9,4 @@ pip3 install -r requirements.txt
 python friends_search.py "your_search_query"
 ```
 in the directory with *friends_search.py*, *FriendsSearch.pkl* and *requirements.txt*.
+Answers to seminar questions are located at *friends_search.ipynb*.
