@@ -1,0 +1,4 @@
+numpy
+pymorphy2
+scikit-learn
+scipy
