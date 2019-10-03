@@ -1,6 +1,6 @@
 # infosearch_hw
 
-My assignments for this university course: https://github.com/hse-infosearch/infosearch
+My assignments for this course: https://github.com/hse-infosearch/infosearch
 ### friends_search
 A simple search engine on a collection of documents (the "Friends" script). The code is located at *friends_search.ipynb* and *friends_search.py*. To use the search engine, run the following: </br>
 ```
