@@ -33,8 +33,7 @@ class SearchEngineBM25():
         self.matrix = csr_matrix((bm25, tf.indices, tf.indptr), shape=tf.shape)
         self.matrix = self.matrix.transpose(copy=True)
 
-
-    def search_matmul(self, query, n=5):
+    def search(self, query, n=5):
         query_vec = self.vectorizer.transform([query])
         result = np.array((query_vec * self.matrix).todense())[0]
         indices = np.argsort(result)[::-1].tolist()[:n]
@@ -45,5 +44,5 @@ with open("BMSearchEngine.pkl", "rb") as file:
     BMSearchEngine = pickle.load(file)
 
 if __name__ == "__main__":
-    for result in BMSearchEngine.search_matmul(sys.argv[1]):
+    for result in BMSearchEngine.search(sys.argv[1]):
         print(result)
