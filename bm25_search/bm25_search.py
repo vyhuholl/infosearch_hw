@@ -12,7 +12,7 @@ m = MorphAnalyzer()
 
 
 def lemmatize(text):
-    return [m.parse(word)[0].normal_form 
+    return [m.parse(word)[0].normal_form
             for word in simple_word_tokenize(text)]
 
 
