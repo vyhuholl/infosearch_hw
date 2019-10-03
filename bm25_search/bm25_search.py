@@ -1,5 +1,4 @@
 import sys
-import pandas as pd
 import numpy as np
 from collections import Counter
 from collections import defaultdict
@@ -63,8 +62,10 @@ class SearchEngineBM25():
         return list(zip(self.texts[indices], result[indices]))
 
 
-with open("BMSearchEngine.pkl", "rb") as file:
-    BMSearchEngine = pickle.load(file)
+with open("docs.txt") as file:
+    docs = file.readlines()
+
+BMSearchEngine = SearchEngineBM25(docs)
 
 if __name__ == "__main__":
     for result in BMSearchEngine.search_matmul(sys.argv[1]):
