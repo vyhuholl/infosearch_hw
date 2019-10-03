@@ -1,4 +1,5 @@
 numpy
+pandas
 pymorphy2
 scikit-learn
 scipy
