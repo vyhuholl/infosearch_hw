@@ -31,29 +31,7 @@ class SearchEngineBM25():
         bm25 = idf * tf.data * (k + 1) / (tf.data + k * (1 - b + b * lens_rel))
         self.matrix = csr_matrix((bm25, tf.indices, tf.indptr), shape=tf.shape)
         self.matrix = self.matrix.transpose(copy=True)
-        self.tf = []
-        df = defaultdict(int)
-        for text in self.texts:
-            self.tf.append(Counter(lemmatize(text)))
-            for word in set(lemmatize(text)):
-                df[word] += 1
-        self.idf = {key: np.log((N - val + 0.5) / (val + 0.5))
-                    for key, val in df.items()}
 
-    def search_naive(self, query, n=5):
-        query = lemmatize(query)
-        result = []
-        for document in self.tf:
-            score = 0
-            for word in query:
-                if word in document:
-                    score += self.idf[word] * document[word] * (self.k + 1) / \
-                             (document[word] + self.k * (1 - self.b + self.b *
-                                                         len(document) /
-                                                         self.avgdl))
-            result.append(score)
-        return sorted(list(zip(self.texts, result)),
-                      key=lambda x: x[1], reverse=True)[:n]
 
     def search_matmul(self, query, n=5):
         query_vec = self.vectorizer.transform([query])
