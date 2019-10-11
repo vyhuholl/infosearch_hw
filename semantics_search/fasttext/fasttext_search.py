@@ -1,3 +1,4 @@
+import sys
 import pickle
 import numpy as np
 from pymorphy2 import MorphAnalyzer
