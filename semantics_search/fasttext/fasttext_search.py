@@ -11,7 +11,7 @@ m = MorphAnalyzer()
 
 
 def lemmatize(text):
-    return [m.parse(word)[0].normal_form 
+    return [m.parse(word)[0].normal_form
             for word in simple_word_tokenize(text)]
 
 
@@ -27,7 +27,7 @@ class SearchFasttext():
                 if lemma in self.model.vocab:
                     lemmas_vectors[idx] = self.model[lemma]
             if lemmas_vectors.shape[0] is not 0:
-                self.vec[i] = np.mean(lemmas_vectors, axis=0)            
+                self.vec[i] = np.mean(lemmas_vectors, axis=0)
 
     def search(self, query, n=5):
         lemmas = lemmatize(query)
