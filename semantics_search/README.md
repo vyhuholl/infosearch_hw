@@ -5,6 +5,6 @@
 For each search engine, to run the search, download all files from the corresponding directory, and then run: </br>
 ```
 pip3 install -r requirements.txt
-python <python_file> "your_search_query"
+python "your_python_file" "your_search_query"
 ```
 in the directory with all necessary files.
