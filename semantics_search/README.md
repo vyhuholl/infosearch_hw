@@ -4,6 +4,7 @@ pip3 install -r requirements.txt
 python "your_python_file" "your_search_query"
 ```
 in the directory with all necessary files. </br>
+**Note**: with **fastText** search engine, you also need to download [pre-trained **fastText** model](http://vectors.nlpl.eu/repository/11/181.zip) and unzip it to the directory with all necessary files. </br>
 
 * **fastText** – uses [pre-trained **fastText** model](http://vectors.nlpl.eu/repository/11/181.zip) (**ruscorpora_none_fasttextskipgram_300_2_2019**) from [**RusVectores**](https://rusvectores.org/en/models/).
 * **ELMO** – uses [pre-trained **ELMO** model](http://vectors.nlpl.eu/repository/11/196.zip) (**ruwikiruscorpora_lemmas_elmo_1024_2019**) from [**RusVectores**](https://rusvectores.org/en/models/).
