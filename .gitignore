@@ -4,3 +4,5 @@ bm25_search/BMSearchEngine.pkl
 
 semantics_search/fasttext/model.*
 semantics_search/fasttext/meta.json
+
+semantics_search/elmo/vec.pkl
