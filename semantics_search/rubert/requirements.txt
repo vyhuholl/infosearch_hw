@@ -1,0 +1,4 @@
+keras
+keras_bert
+numpy
+pymorphy2
