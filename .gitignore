@@ -6,3 +6,6 @@ semantics_search/fasttext/model.*
 semantics_search/fasttext/meta.json
 
 semantics_search/elmo/vec.pkl
+semantics_search/elmo/model.hdf5
+semantics_search/elmo/options.json
+semantics_search/elmo/vocab.txt.gz
