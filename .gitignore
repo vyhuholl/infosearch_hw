@@ -10,3 +10,7 @@ semantics_search/elmo/vec.pkl
 semantics_search/elmo/model.hdf5
 semantics_search/elmo/options.json
 semantics_search/elmo/vocab.txt.gz
+
+semantics_search/rubert/vec.pkl
+semantics_search/rubert/bert*
+semantics_search/rubert/vocab.txt
