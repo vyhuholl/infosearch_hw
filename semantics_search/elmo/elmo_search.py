@@ -2,10 +2,15 @@ import sys
 import pickle
 import numpy as np
 import tensorflow as tf
+from warnings import filterwarnings
 from pymorphy2 import MorphAnalyzer
 from pymorphy2.tokenizers import simple_word_tokenize
 from elmo_helpers import load_elmo_embeddings, get_elmo_vectors
 from bilm import Batcher, BidirectionalLanguageModel, weight_layers
+
+filterwarnings("ignore")
+
+tf.reset_default_graph()
 
 with open("docs.pkl", "rb") as file:
     docs = pickle.load(file)
