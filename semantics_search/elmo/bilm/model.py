@@ -1,9 +1,11 @@
 import json
 import h5py
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from .data import UnicodeCharsVocabulary, Batcher, InvalidNumberOfCharacters
+
+tf.disable_v2_behavior()
 
 DTYPE = 'float32'
 DTYPE_INT = 'int64'

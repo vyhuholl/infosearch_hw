@@ -4,9 +4,10 @@
 import sys
 import re
 import os
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from bilm import Batcher, BidirectionalLanguageModel, weight_layers
 
+tf.disable_v2_behavior()
 
 def tokenize(string):
     """
