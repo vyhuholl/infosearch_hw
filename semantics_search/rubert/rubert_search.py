@@ -23,7 +23,7 @@ def lemmatize(text):
 
 
 class SearchBERT():
-    def __init__(self):
+    def __init__(self, docs, vec):
         self.texts = np.array(docs)
         self.vec = vec
         paths = get_checkpoint_paths(".")
@@ -45,3 +45,11 @@ class SearchBERT():
         result = np.matmul(self.vec, query_vec)
         idxs = np.argsort(result)[::-1].tolist()[:n]
         return list(zip(self.texts[idxs], result[idxs]))
+
+
+BERTSearchEngine = SearchBERT(docs, vec)
+
+
+if __name__ == "__main__":
+    for result in BERTSearchEngine.search(sys.argv[1]):
+        print(result)
