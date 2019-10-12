@@ -25,7 +25,7 @@ batcher, ids, elmo_input = load_elmo_embeddings(".")
 
 
 class SearchELMO():
-    def __init__(self, data):
+    def __init__(self, docs, vec):
         self.texts = np.array(docs)
         self.vec = vec
 
@@ -38,3 +38,11 @@ class SearchELMO():
             result = np.matmul(self.vec, query_vec)
             indices = np.argsort(result)[::-1].tolist()[:n]
         return list(zip(self.texts[indices], result[indices]))
+
+
+ELMOSearchEngine = SearchELMO(docs, vec)
+
+
+if __name__ == "__main__":
+    for result in ELMOSearchEngine.search(sys.argv[1]):
+        print(result)
