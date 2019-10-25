@@ -1,5 +1,5 @@
 h5py
 numpy
 pymorphy2
-tensorflow > 1.10
 smart_open > 1.8.1
+tensorflow > 1.10
