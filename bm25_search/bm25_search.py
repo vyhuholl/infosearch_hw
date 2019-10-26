@@ -24,8 +24,8 @@ class SearchEngineBM25():
         tf = self.vectorizer.fit_transform(self.texts)
         N = (tf.getnnz(axis=1)).sum()
         lens = np.array(tf.sum(axis=0))[0]
-        self.avgdl = lens.mean()
-        lens_rel = np.array([lens[x] / self.avgdl for x in tf.nonzero()[1]])
+        avgdl = lens.mean()
+        lens_rel = np.array([lens[x] / avgdl for x in tf.nonzero()[1]])
         idf = np.array([np.log((N - y + 0.5) / (y + 0.5))
                         for y in tf.nonzero()[0]])
         bm25 = idf * tf.data * (k + 1) / (tf.data + k * (1 - b + b * lens_rel))
