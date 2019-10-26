@@ -1,7 +1,6 @@
 import sys
 import pickle
 import numpy as np
-from collections import Counter
 from collections import defaultdict
 from scipy.sparse import csr_matrix
 from pymorphy2 import MorphAnalyzer
