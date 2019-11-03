@@ -4,7 +4,6 @@ import sys
 import pickle
 from math import log
 from pymorphy2 import MorphAnalyzer
-from collections import Counter
 from collections import defaultdict
 from nltk.tokenize import RegexpTokenizer
 
